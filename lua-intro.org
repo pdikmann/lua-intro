@@ -1,0 +1,81 @@
+#+STARTUP: indent
+#+HTML_HEAD: <style>p { white-space: pre-line; }</style>
+
+* toc
+wat is it
+syntax
+control structures
+data types
+fun with: functions
+fun with: tables
+standard library
+embedding teaser
+
+* wat
+website: http://www.lua.org
+manual: http://www.lua.org/manual/5.3/manual.html
+interpreted
+running in own vm
+garbage-collected
+
+* syntax
+line end: no semicolons
+blocks: whitespace, no curly braces but `do ... end` / `then ... end` / `else ... end`
+
+* control structures
+if, (no switch)
+while, repeat,
+(goto :O)
+for, numeric & iterators
+
+
+* data types
+dynamically typed, meaning: variables don't have types – only values have types
+
+** the seven basic types
+boolean
+number   (interchangeably int or float, precision defined at lua compile time)
+string
+function (fuck yes)
+table    (similar to hashmap, see below)
+thread   (no idea)
+userdata (no idea)
+
+* functions
+anonymous functions
+closures
+
+* tables
+store key/value: simply assign to unknown key
+integer keys = behave like arrays
+metatables (OOP)
+
+* standard library
+strings
+math
+tables - table.insert, table.remove, ...
+package (modules) - code reload, hotswap
+os (?)
+io (?)
+coroutine (?, threads)
+debug (?)
+utf8 (?)
+
+* embedding
+downloads & builds in 15 seconds
+
+#include lua.h / lua.hpp (C or C++)
+
+linker flags
+-llua -L<luadir> -I<luadir>
+<luadir> is the ./src dir of the distro
+(the one containing lualib.a, lua.h and lua.hpp)
+
+usage
+a `lua_State` encapsulates an entire Lua VM
+
+references (what i found helpful)
+http://forums.tigsource.com/index.php?topic=22524.0
+http://rubenlaguna.com/wp/2012/11/26/first-steps-lua-cplusplus-integration/
+
+Nota Bene: always check your Lua version & manual, there are breaking changes between 5.1, 5.2 and 5.3
