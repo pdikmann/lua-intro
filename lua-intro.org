@@ -1,4 +1,5 @@
 #+STARTUP: indent
+#+OPTIONS: preserve-breaks
 #+HTML_HEAD: <style>p { white-space: pre-line; }</style>
 
 * toc
